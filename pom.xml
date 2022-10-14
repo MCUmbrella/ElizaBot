@@ -13,4 +13,36 @@
         <maven.compiler.target>8</maven.compiler.target>
     </properties>
 
+    <repositories>
+        <repository>
+            <id>floatationdevice</id>
+            <url>https://maven.floatationdevice.vip/</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <dependency>
+            <groupId>vip.floatationdevice</groupId>
+            <artifactId>g4jbot</artifactId>
+            <version>0.9.0</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <configuration>
+                    <archive>
+                        <manifest>
+                        </manifest>
+                    </archive>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
 </project>
