@@ -10,15 +10,6 @@ import java.util.UUID;
 public class ConfigUtil
 {
     static String token, channelId;
-    public static class ConfigCreationException extends RuntimeException
-    {
-        public ConfigCreationException(){super("Failed to create config file");}
-    }
-
-    public static class InvalidConfigException extends RuntimeException
-    {
-        public InvalidConfigException(){super("Config file check failed");}
-    }
 
     public static void loadConfig() throws InvalidConfigException, ConfigCreationException
     {
@@ -72,5 +63,15 @@ public class ConfigUtil
             ice.initCause(e);
             throw ice;
         }
+    }
+
+    public static class ConfigCreationException extends RuntimeException
+    {
+        public ConfigCreationException(){super("Failed to create config file");}
+    }
+
+    public static class InvalidConfigException extends RuntimeException
+    {
+        public InvalidConfigException(){super("Config file check failed");}
     }
 }

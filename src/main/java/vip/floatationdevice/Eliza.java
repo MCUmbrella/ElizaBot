@@ -8,6 +8,11 @@ import java.util.Scanner;
 
 public class Eliza
 {
+    // misc
+    public static final String
+            WELCOME_MSG = "Hi! I'm Eliza. I am your personal therapy computer.\nPlease tell me your problem.",
+            RESPONSE_DAT_ERROR_MSG = "Sorry, I seem to have mis-placed the response files.",
+            LOGIC_ERROR_MSG = "Hmmm, I seem to be having problems myself.";
     // Keywords
     private static final String[] KEYWORDS = new String[]{
             " can you ", " can i ", " you are ", " you're ", " i do not ",
@@ -20,10 +25,8 @@ public class Eliza
             "no key found", "repeat input"
     };
     private static final int MAX_KEYWORDS = 37;
-
     private static final ArrayList<String> RESPONSES = new ArrayList<>();
     private static final int MAX_RESP_NUM = 116;
-
     // this array contains the start index to the response strings
     private static final int[] KEY_INDEX = new int[]{
             1, 4, 6, 6, 10,
@@ -35,7 +38,6 @@ public class Eliza
             80, 83, 90, 93, 99,
             106, 113
     };
-
     // this array contains the end index to the response strings
     private static final int[] KEY_END = new int[]{
             3, 5, 9, 9, 13,
@@ -47,7 +49,6 @@ public class Eliza
             82, 89, 92, 98, 105,
             112, 116
     };
-
     // String data for conjugations
     private static final String[] CON1 = new String[]{
             "are", "were", "you", "your",
@@ -57,17 +58,10 @@ public class Eliza
             "am", "was", "I", "my",
             "you've", "you're", "you", "mine"
     };
-
     // possible punctuation
     private static final char[] PUNC_SET = new char[]{
             '.', '!', '?', ',', ';'
     };
-
-    // misc
-    public static final String
-            WELCOME_MSG = "Hi! I'm Eliza. I am your personal therapy computer.\nPlease tell me your problem.",
-            RESPONSE_DAT_ERROR_MSG = "Sorry, I seem to have mis-placed the response files.",
-            LOGIC_ERROR_MSG = "Hmmm, I seem to be having problems myself.";
     private static boolean RESPONSE_DAT_INITIALIZED = false;
     private final Random r = new Random();
     private String prevInput = "";
