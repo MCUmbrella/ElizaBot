@@ -1,4 +1,4 @@
-package vip.floatationdevice;
+package vip.floatationdevice.eliza;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;

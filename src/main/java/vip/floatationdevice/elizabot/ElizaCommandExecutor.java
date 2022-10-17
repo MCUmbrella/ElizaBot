@@ -1,10 +1,11 @@
-package vip.floatationdevice;
+package vip.floatationdevice.elizabot;
 
+import vip.floatationdevice.eliza.Eliza;
 import vip.floatationdevice.g4jbot.G4JBot;
 import vip.floatationdevice.g4jbot.GuildedCommandExecutor;
 import vip.floatationdevice.guilded4j.object.ChatMessage;
 
-import static vip.floatationdevice.Main.*;
+import static vip.floatationdevice.elizabot.Main.*;
 
 public class ElizaCommandExecutor implements GuildedCommandExecutor
 {

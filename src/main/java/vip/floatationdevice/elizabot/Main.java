@@ -1,6 +1,7 @@
-package vip.floatationdevice;
+package vip.floatationdevice.elizabot;
 
 import com.google.common.eventbus.Subscribe;
+import vip.floatationdevice.eliza.Eliza;
 import vip.floatationdevice.g4jbot.G4JBot;
 import vip.floatationdevice.guilded4j.event.ChatMessageCreatedEvent;
 import vip.floatationdevice.guilded4j.event.GuildedWebSocketWelcomeEvent;

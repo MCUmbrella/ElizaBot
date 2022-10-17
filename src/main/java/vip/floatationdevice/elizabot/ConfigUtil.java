@@ -1,4 +1,4 @@
-package vip.floatationdevice;
+package vip.floatationdevice.elizabot;
 
 import java.io.*;
 import java.util.Properties;

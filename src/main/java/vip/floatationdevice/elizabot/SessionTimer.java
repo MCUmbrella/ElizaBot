@@ -1,4 +1,4 @@
-package vip.floatationdevice;
+package vip.floatationdevice.elizabot;
 
 public class SessionTimer extends Thread
 {
