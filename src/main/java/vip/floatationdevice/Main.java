@@ -6,7 +6,10 @@ import vip.floatationdevice.guilded4j.event.ChatMessageCreatedEvent;
 import vip.floatationdevice.guilded4j.event.GuildedWebSocketWelcomeEvent;
 import vip.floatationdevice.guilded4j.object.ChatMessage;
 
+import java.util.NoSuchElementException;
+import java.util.Scanner;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.function.Consumer;
 
 public class Main
 {
@@ -97,5 +100,46 @@ public class Main
                 })
                 .connectWebSocket(true, null);
         System.out.println("[SYSTEM] Websocket connection started");
+        Scanner sc = new Scanner(System.in);
+        for(; ; )
+        {
+            String s;
+            try
+            {
+                s = sc.nextLine();
+            catch(NoSuchElementException e) // ^D
+            {
+                s = "q";
+            }
+            switch(s.toLowerCase())
+            {
+                case "q": // exit the program
+                {
+                    System.out.println("[BOT] Stopping");
+                    b.disconnectWebSocket(true);
+                    System.out.println("[BOT] Eliza bot stopped");
+                    System.exit(0);
+                }
+                case "s": // list all sessions
+                {
+                    System.out.println("[BOT] " + sessions.size() + " session(s):\n      " + sessions.keySet());
+                    break;
+                }
+                case "c": // close all sessions
+                {
+                    System.out.println("[BOT] Closing all sessions");
+                    timers.values().forEach(new Consumer<SessionTimer>()
+                    {
+                        @Override
+                        public void accept(SessionTimer t)
+                        {
+                            t.interrupt();
+                        }
+                    });
+                    timers.clear();
+                    sessions.clear();
+                }
+            }
+        }
     }
 }

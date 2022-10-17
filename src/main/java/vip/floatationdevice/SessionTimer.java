@@ -15,7 +15,7 @@ public class SessionTimer extends Thread
         try
         {
             System.out.println("[TIMER] <" + getName() + "> Started session expiration timer of " + userId);
-            sleep(10000L);
+            sleep(60000L);
             System.out.println("[TIMER] <" + getName() + "> Eliza session for " + userId + " expired");
             Main.sessions.remove(userId);
             Main.timers.remove(userId);
