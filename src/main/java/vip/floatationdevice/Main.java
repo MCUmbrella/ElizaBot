@@ -107,6 +107,7 @@ public class Main
             try
             {
                 s = sc.nextLine();
+            }
             catch(NoSuchElementException e) // ^D
             {
                 s = "q";
