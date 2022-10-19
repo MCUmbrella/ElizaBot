@@ -22,7 +22,7 @@ public class SessionTimer extends Thread
         }
         catch(InterruptedException e)
         {
-            System.out.println("[TIMER] <" + getId() + "> Stopped session expiration timer for " + userId);
+            System.out.println("[TIMER] <" + getName() + "> Stopped session expiration timer for " + userId);
         }
     }
 }

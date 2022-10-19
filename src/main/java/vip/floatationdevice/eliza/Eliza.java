@@ -154,7 +154,8 @@ public class Eliza
                 .replace(" naw ", " no ")
                 .replace(" nope ", " no ")
                 .replace(" hey ", " hi ")
-                .replace(" because ", " cause ");
+                .replace(" because ", " cause ")
+                .replace(" cuz ", " cause ");
 
     }
 
@@ -176,7 +177,7 @@ public class Eliza
 
     /**
      * try to find a keyword.
-     * @return Object[0]: the string after the first keyword found in the string;
+     * @return Object[0]: the first sentence after the first keyword found in the string;
      * Object[1]: the index of the keyword in the keywords array;
      * return {"", 35} if no keyword was found;
      */
@@ -186,10 +187,14 @@ public class Eliza
         for(int i = 0; i != MAX_KEYWORDS; i++)
         {
             if(s.contains(KEYWORDS[i]))
+            {
+                int start = s.indexOf(KEYWORDS[i]) + KEYWORDS[i].length();
+                int end = s.indexOf('.');
                 return new Object[]{
-                        s.substring(s.indexOf(KEYWORDS[i]) + KEYWORDS[i].length()),
+                        s.substring(start, end > start ? end : s.length()),
                         i
                 };
+            }
         }
         return new Object[]{"", 35};
     }

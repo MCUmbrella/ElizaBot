@@ -7,6 +7,8 @@ import vip.floatationdevice.guilded4j.event.ChatMessageCreatedEvent;
 import vip.floatationdevice.guilded4j.event.GuildedWebSocketWelcomeEvent;
 import vip.floatationdevice.guilded4j.object.ChatMessage;
 
+import java.net.InetSocketAddress;
+import java.net.Proxy;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 import java.util.concurrent.ConcurrentHashMap;
@@ -59,7 +61,7 @@ public class Main
             System.exit(-1);
         }
         b = new G4JBot(ConfigUtil.token);
-        //b.setProxy(new Proxy(Proxy.Type.SOCKS, new InetSocketAddress("127.0.0.1", 59909)));
+        b.setProxy(new Proxy(Proxy.Type.SOCKS, new InetSocketAddress("127.0.0.1", 59909)));
         b.setVerbose(false)
                 .setAutoReconnect(true)
                 .setCommandPrefix("/")
